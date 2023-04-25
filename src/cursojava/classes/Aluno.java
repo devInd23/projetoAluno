@@ -18,44 +18,18 @@ public class Aluno {
       private  String numeroCpf;
       private  String nomeMae;
       private  String dataMatricula;
-      private double nota1;
-      private double nota2;
-      private double nota3;
-      private double nota4;
 
-      public double getNota1() {
-          return nota1;
-      }
+      private Discliplina disciplina = new Discliplina();
 
-      public void setNota1(double nota1) {
-          this.nota1 = nota1;
-      }
+    public Discliplina getDisciplina() {
+        return disciplina;
+    }
 
-      public double getNota2() {
-          return nota2;
-      }
+    public void setDisciplina(Discliplina disciplina) {
+        this.disciplina = disciplina;
+    }
 
-      public void setNota2(double nota2) {
-          this.nota2 = nota2;
-      }
-
-      public double getNota3() {
-          return nota3;
-      }
-
-      public void setNota3(double nota3) {
-          this.nota3 = nota3;
-      }
-
-      public double getNota4() {
-          return nota4;
-      }
-
-      public void setNota4(double nota4) {
-          this.nota4 = nota4;
-      }
-
-      public String getNome() {
+    public String getNome() {
           return nome;
       }
 
@@ -112,7 +86,7 @@ public class Aluno {
       }
 
       public double getMediaNota() {
-          return ( nota1 + nota2 + nota3 + nota4 ) / 4 ;
+          return ( disciplina.getNota1() + disciplina.getNota2() + disciplina.getNota3() + disciplina.getNota4()) / 4 ;
       }
 
                    //criação de um modelo de um metodo que retorna uma String, porque criamos ele como String.
@@ -129,11 +103,25 @@ public class Aluno {
 
 
     @Override
+    public String toString() {
+        return "Aluno{" +
+                "nome='" + nome + '\'' +
+                ", idade=" + idade +
+                ", dataNascimento='" + dataNascimento + '\'' +
+                ", registrogeral='" + registrogeral + '\'' +
+                ", numeroCpf='" + numeroCpf + '\'' +
+                ", nomeMae='" + nomeMae + '\'' +
+                ", dataMatricula='" + dataMatricula + '\'' +
+                ", disciplina=" + disciplina +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Aluno aluno = (Aluno) o;
-        return getNome().equals(aluno.getNome()) && getNumeroCpf().equals(aluno.getNumeroCpf());
+        return getIdade() == aluno.getIdade() && getNome().equals(aluno.getNome()) && getDataNascimento().equals(aluno.getDataNascimento()) && getRegistrogeral().equals(aluno.getRegistrogeral()) && getNumeroCpf().equals(aluno.getNumeroCpf()) && getNomeMae().equals(aluno.getNomeMae()) && getDataMatricula().equals(aluno.getDataMatricula()) && getDisciplina().equals(aluno.getDisciplina());
     }
 
     @Override
