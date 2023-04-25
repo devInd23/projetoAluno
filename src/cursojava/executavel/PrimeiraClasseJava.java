@@ -33,7 +33,7 @@ public class PrimeiraClasseJava {
         aluno1.setIdade(Integer.parseInt(idade));
         aluno1.setDataNascimento("29/05/1989");
         aluno1.setRegistrogeral("00.000.000.0");
-        aluno1.setNomeMae("Maria");
+        aluno1.setNomeMae("Mariaa");
         aluno1.setNumeroCpf("000.000.000.00");
         aluno1.setDataMatricula("01/01/2023");
 
